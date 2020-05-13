@@ -1,7 +1,7 @@
 
-if (process.env.NODE_ENV !== "production") {
-    require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
-}
+// if (process.env.NODE_ENV !== "production") {
+//     require('dotenv').config({ silent: process.env.NODE_ENV === 'production' });
+// }
 
 
 const express = require("express");
