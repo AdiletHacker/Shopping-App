@@ -1,6 +1,4 @@
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config();
-}
+require("dotenv").config();
 
 const express = require("express");
 const mongoose = require("mongoose");
@@ -31,7 +29,7 @@ db.on("open", () => console.log("Connected to Database!"));
 
 
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT || 5000);
 
 
 
