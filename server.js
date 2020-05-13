@@ -13,8 +13,6 @@ const app = express();
 app.use(bodyParser.json());
 app.use("/api/items", require("./routes/api/items"));
 
-// const uri = "mongodb+srv://user:zcH85ABsA0XGyzyw@cluster0-knb9o.mongodb.net/test?retryWrites=true&w=majority";
-
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on("error", error => console.error(error));
