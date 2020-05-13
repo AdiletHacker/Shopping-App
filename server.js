@@ -18,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-mongoose.connect("mongodb://localhost:27017/shopping-site", { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect("mongodb+srv://user:UlTWec91AgtUwjFB@cluster0-knb9o.mongodb.net/test?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose.connection;
 db.on("error", error => console.error(error));
 db.on("open", () => console.log("Connected to Database!"));
