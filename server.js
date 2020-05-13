@@ -2,15 +2,13 @@ if (process.env.NODE_ENV !== "production") {
     require("dotenv").config();
 };
 
-
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
 
 
-app.use(bodyParser.json());
+app.use(express.json());
 app.use("/api/items", require("./routes/api/items"));
 
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTopology: true });
