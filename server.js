@@ -1,4 +1,9 @@
 
+if (process.env.NODE_ENV !== "production") {
+    require("dotenv").config();
+}
+
+
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
@@ -18,7 +23,7 @@ if (process.env.NODE_ENV === "production") {
 }
 
 
-mongoose.connect("mongodb+srv://user:UlTWec91AgtUwjFB@cluster0-knb9o.mongodb.net/test?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true });
+mongoose.connect(process.env.DB_URL, { useUnifiedTopology: true, useNewUrlParser: true });
 const db = mongoose.connection;
 db.on("error", error => console.error(error));
 db.on("open", () => console.log("Connected to Database!"));
